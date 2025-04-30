@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double areacircunferencia(double r) {
+    const double PI = 3.141592653589793;
+    return PI * pow(r, 2);
+}
+
+int main() {
+    double raio;
+    cout << "Digite o valor do raio: ";
+    cin >> raio;
+
+    double area = areacircunferencia(raio);
+    cout << "Área da circunferência: " << area << endl;
+
+    return 0;
+}
