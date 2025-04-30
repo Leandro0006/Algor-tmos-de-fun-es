@@ -1,1 +1,44 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
 
+double soma(double a, double b) { return a + b; }
+double subtrai(double a, double b) { return a - b; }
+double multiplica(double a, double b) { return a * b; }
+double divide(double a, double b) {
+    if (b != 0) return a / b;
+    else {
+        cout << "Erro: divisão por zero!" << endl;
+        return 0;
+    }
+}
+double potencia(double base, double expoente) { return pow(base, expoente); }
+double raiz(double x) { return sqrt(x); }
+
+int main() {
+    double num1, num2;
+    char oper;
+
+    cout << "Digite o primeiro número: ";
+    cin >> num1;
+    cout << "Digite o operador (+, -, *, /, ^, r): ";
+    cin >> oper;
+
+    if (oper == 'r') {
+        cout << "Raiz quadrada de " << num1 << " = " << raiz(num1) << endl;
+    } else {
+        cout << "Digite o segundo número: ";
+        cin >> num2;
+
+        switch (oper) {
+            case '+': cout << "Resultado: " << soma(num1, num2) << endl; break;
+            case '-': cout << "Resultado: " << subtrai(num1, num2) << endl; break;
+            case '*': cout << "Resultado: " << multiplica(num1, num2) << endl; break;
+            case '/': cout << "Resultado: " << divide(num1, num2) << endl; break;
+            case '^': cout << "Resultado: " << potencia(num1, num2) << endl; break;
+            default: cout << "Operador inválido!" << endl;
+        }
+    }
+
+    return 0;
+}
